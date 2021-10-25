@@ -49,7 +49,7 @@ def splitBySign(list: List[Int]): (List[Int], List[Int]) =
 
 
 //time complexity: O(n)
-//space complexity: O(n)
+//space complexity: O((n^2 + n) / 2),   n - length of list
 //n is length of list
 def calculateLength[T](list: List[T]): Int =
 
@@ -58,8 +58,9 @@ def calculateLength[T](list: List[T]): Int =
 
 
 //time complexity: O(n)
-//space complexity: O(n)
-//n = list1.length + list2.length
+//space complexity: O(n^2 + 3n)
+//input: 2*n, list1.head + list2.head: 2*n, list1.tail + list2.tail: (((n - 1) + 1) / 2)(n - 1) * 2 = n(n - 1)
+//n = shorter list
 def concatenateLists[T](list1: List[T], list2: List[T]): List[T] =
 
   (list1, list2) match
